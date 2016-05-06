@@ -1,33 +1,37 @@
 require "mainfunctions"
 
-local pattern = "../mods/workshop-%d+/"
+local pattern = "%.%./mods/(workshop-%d+)/"
 
 print("DST Debugger has been loaded!")
 
 -- in case string.gfind is not supported
-function my_gfind(s, pat, save)
-	if #save == 0
-		save = ""s
-	end
-	src, dst = string.find(save, )
+function myfind(s, pat)
+  if string.gfind then
+    return string.gfind(s, pat)
+  elseif string.gmatch then
+    return string.gmatch(s,pat)
+  else
+   return nil
+  end
 end
 
 function processError(error)
-	if not error
-		return nil
-	end
-	--@see string.gfind
-	save = ""
-	for matcher
-		in my_gfind(error, pattern, save)
-	do
-	
-	end
+  if not error then
+    return nil
+  end
+
+  -- retrieve mod name
+  for modname
+  in myfind(error, pattern)
+  do
+  end
+  
+  return nil
 end
 
 -- Override global function DisplayError in mainfunctions.lua
 function myDisplayError(error)
-	processError(error)
-	DisplayError(error)
+  processError(error)
+  DisplayError(error)
 end
 DisplayError = myDisplayError
