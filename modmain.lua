@@ -1,4 +1,4 @@
-require("mainfunctions")
+GLOBAL.require("mainfunctions")
 
 local pattern = "%.%./mods/(workshop-%d+)/"
 
