@@ -1,7 +1,7 @@
 name = "Don't Starve Debugger"
 description = "This mod will process crash report and decide which mod is to blame."
-author = "Nymphoenix"
-version = "1.0.3"
+author = "KaiserKatze"
+version = "1.2"
 client_only_mod = true
 all_clients_require_mod = false
 api_version = 10
